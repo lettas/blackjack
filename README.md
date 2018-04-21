@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/lettas/blackjack.svg?style=shield)](https://circleci.com/gh/lettas/blackjack)
+
 # コマンドプロンプトでマルチプレイブラックジャック
 
 ## ルール
