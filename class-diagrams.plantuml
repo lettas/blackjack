@@ -11,7 +11,7 @@ Player *-- Strategy
 Player *-- Hand
 
 interface Strategy {
-    next(Context): Command
+    nextCommand(PlayingContext): Command
 }
 Strategy <|-- DealerStrategy
 Strategy <|-- StdinStrategy
@@ -28,7 +28,7 @@ class Card {
     display: String
 }
 
-class Context {
+class PlayingContext {
     knownDealerCard: Card
     playerHand: Hand
     otherHands: Hand[]
