@@ -43,6 +43,14 @@ hand: alice 8 3 9 / 8 A
 command? alice> S S
 ```
 
+### 破産
+
+```
+payout: alice 0
+chip: alice 0
+SYSTEM: PLAYER alice WENT BANKRUPT...
+```
+
 ### 不正な入力
 
 #### 知らないコマンド
