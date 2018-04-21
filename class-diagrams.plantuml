@@ -1,0 +1,37 @@
+@startuml Blackjack
+
+class Player {
+    name: String
+    strategy: Strategy
+    hand: Hand
+    secondHand: Hand
+    chip: Number
+}
+Player *-- Strategy
+Player *-- Hand
+
+interface Strategy {
+    next(Context): Command
+}
+Strategy <|-- DealerStrategy
+Strategy <|-- StdinStrategy
+
+class Hand {
+    cards: Card[]
+    score: Number
+}
+Hand o-- Card
+
+class Card {
+    mark: Mark
+    number: Number
+    display: String
+}
+
+class Context {
+    knownDealerCard: Card
+    playerHand: Hand
+    otherHands: Hand[]
+}
+
+@enduml
