@@ -26,7 +26,7 @@ command? bob> S
 hand: dealer 1 8
 hand: dealer 1 8 7
 hand: dealer 1 8 7 2
-payout: alice 0
+payout: alice 0
 payout: bob 20
 chip: alice 40
 chip: bob 60
@@ -41,4 +41,74 @@ hand: alice 8 3 / 8 A
 command? alice> H S
 hand: alice 8 3 9 / 8 A
 command? alice> S S
+```
+
+### 破産
+
+```
+payout: alice 0
+chip: alice 0
+SYSTEM: PLAYER alice WENT BANKRUPT...
+```
+
+### 不正な入力
+
+#### 知らないコマンド
+
+```
+command? alice: Aho
+SYSTEM: I DON'T UNDERSTAND!
+commands: H(Hit) S(Stand) D(Double) /(Split) ?(Help)
+```
+
+#### 今それはできません
+
+```
+hand: alice 8 9
+command? alice: /
+SYSTEM: YOU CAN'T DO SPLIT NOW!
+command? alice: D
+SYSTEM: YOU CAN'T DO DOUBLE NOW!!
+```
+
+#### 間違えすぎた
+
+```
+command? alice: /
+SYSTEM: YOU CAN'T DO SPLIT NOW!
+command? alice: /
+SYSTEM: YOU CAN'T DO SPLIT NOW!!
+command? alice: D
+SYSTEM: YOU CAN'T DO DOUBLE NOW!!!
+command? alice: D
+SYSTEM: FACE OF HOTOKE IS UPTO 3 TIMES!!!!
+payout: alice 0
+```
+
+#### Split中のエラー
+
+```
+hand: alice 8 8 / 8 A
+command? alice> / D
+SYSTEM: YOU CAN'T DO SPLIT/DOUBLE NOW!
+command? alice> H /
+SYSTEM: YOU CAN'T DO SPLIT NOW!!
+command? alice> S H
+hand: alice 8 8 / 8 A 1
+command? alice> H S
+SYSTEM: YOU CAN'T DO HIT NOW!!!
+```
+
+#### 掛け金詐欺
+
+```
+chip: alice 50
+bet? alice> 100
+SYSTEM: YOU DON'T HAVE ENOUGH CHIP!
+bet? alice> hyaku
+SYSTEM: I DON'T UNDERSTAND!!
+bet? alice> -40
+SYSTEM: MINIMUM BET IS 1!!!
+bet? alice> 1000000
+SYSTEM: YOU ONLY HAVE 50. LET'S GET START.
 ```
