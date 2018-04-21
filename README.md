@@ -1,7 +1,5 @@
 [![CircleCI](https://circleci.com/gh/lettas/blackjack.svg?style=shield)](https://circleci.com/gh/lettas/blackjack)
 
-# コマンドプロンプトでマルチプレイブラックジャック
-
 ## ルール
 
 手札の合計が21より小さくて21に近くなることをディラーと競い合うゲーム。(▶︎[詳細](http://www.mastertwentyone.com/rules.html))
