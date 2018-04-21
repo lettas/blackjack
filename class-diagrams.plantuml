@@ -34,4 +34,11 @@ class PlayingContext {
     otherHands: Hand[]
 }
 
+enum Command {
+    Hit
+    Stand
+    Double
+    Split
+}
+
 @enduml
