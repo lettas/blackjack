@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: swift
+      - image: swift:4.0.3
     steps:
       - checkout
       - run: swift test
