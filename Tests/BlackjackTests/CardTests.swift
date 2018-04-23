@@ -1,6 +1,17 @@
 import XCTest
 @testable import Blackjack
 
+extension CardTests {
+    public static var allTests: [(String, (CardTests) -> () throws -> Void)] {
+        return [
+            ("testInitializer", testInitializer),
+            ("testDisplayNumber", testDisplayNumber),
+            ("testDisplayNumber", testOutOfRange),
+            ("testDisplayNumber", testDescription)
+        ]
+    }
+}
+
 class CardTests: XCTestCase {
     func testInitializer() {
         let card = Card(suit: .Spades, number: 5)
