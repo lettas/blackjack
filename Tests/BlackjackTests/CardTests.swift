@@ -23,4 +23,10 @@ class CardTests: XCTestCase {
         XCTAssertEqual(Card(suit: .Spades, number: 12).displayNumber, "Q")
         XCTAssertEqual(Card(suit: .Spades, number: 13).displayNumber, "K")
     }
+
+    func testOutOfRange() {
+        // NOTE: 今は範囲外の値も普通に受付ちゃう
+        XCTAssertEqual(Card(suit: .Spades, number: 0).displayNumber, "0")
+        XCTAssertEqual(Card(suit: .Spades, number: 14).displayNumber, "14")
+    }
 }
