@@ -8,7 +8,6 @@ struct Card {
     }
 
     public let suit: Suit
-
     public let number: Int
 
     public var displayNumber: String {
@@ -23,5 +22,10 @@ struct Card {
 
     public var description: String {
         return "\(suit.rawValue)\(number)"
+    }
+
+    public init(suit: Suit, number: Int) {
+        self.suit = suit
+        self.number = number
     }
 }
