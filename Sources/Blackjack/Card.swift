@@ -1,4 +1,3 @@
-
 struct Card {
     public enum Suit: String {
         case Spades = "\u{2660}"
