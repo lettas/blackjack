@@ -6,8 +6,8 @@ extension CardTests {
         return [
             ("testInitializer", testInitializer),
             ("testDisplayNumber", testDisplayNumber),
-            ("testDisplayNumber", testOutOfRange),
-            ("testDisplayNumber", testDescription)
+            ("testOutOfRange", testOutOfRange),
+            ("testDescription", testDescription)
         ]
     }
 }
