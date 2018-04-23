@@ -5,7 +5,7 @@ class Player {
     strategy: Strategy
     hand: Hand
     secondHand: Hand
-    chip: Number
+    chip: Int
 }
 Player *-- Strategy
 Player *-- Hand
@@ -18,14 +18,14 @@ Strategy <|-- StdinStrategy
 
 class Hand {
     cards: Card[]
-    score: Number
+    score: Int
 }
 Hand o-- Card
 
 class Card {
-    mark: Mark
-    number: Number
-    display: String
+    suit: Suit
+    number: Int
+    displayNumber: String
 }
 
 class PlayingContext {
