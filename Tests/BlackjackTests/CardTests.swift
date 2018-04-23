@@ -29,4 +29,9 @@ class CardTests: XCTestCase {
         XCTAssertEqual(Card(suit: .Spades, number: 0).displayNumber, "0")
         XCTAssertEqual(Card(suit: .Spades, number: 14).displayNumber, "14")
     }
+
+    func testDescription() {
+        let card = Card(suit: .Hearts, number: 5)
+        XCTAssertEqual(card.description, "\u{2661}5")
+    }
 }
