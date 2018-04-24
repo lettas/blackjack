@@ -1,6 +1,16 @@
 import XCTest
 @testable import Blackjack
 
+extension DealerStrategyTests {
+    static var allTests: [(String, (DealerStrategyTests) -> () throws -> Void)] {
+        return [
+            ("testUnder17", testUnder17),
+            ("testOver17", testOver17),
+            ("testSimulation", testSimulation)
+        ]
+    }
+}
+
 class DealerStrategyTests: XCTestCase {
     func testUnder17() {
         let strategy = DealerStrategy()
