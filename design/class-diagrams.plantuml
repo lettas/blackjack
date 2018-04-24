@@ -17,8 +17,10 @@ Strategy <|-- DealerStrategy
 Strategy <|-- StdinStrategy
 
 class Hand {
-    cards: Card[]
     score: Int
+    scores: Int[]
+    - cards: Card[]
+    add(Card)
 }
 Hand o-- Card
 
