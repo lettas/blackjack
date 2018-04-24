@@ -1,9 +1,10 @@
 import XCTest
 
 #if !os(OSX)
-public func allTests() -> [XCTestCaseEntry] {
+func allTests() -> [XCTestCaseEntry] {
     return [
-        testCase(CardTests.allTests)
+        testCase(CardTests.allTests),
+        testCase(HandTests.allTests)
     ]
 }
 #endif
