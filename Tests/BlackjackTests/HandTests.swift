@@ -1,6 +1,16 @@
 import XCTest
 @testable import Blackjack
 
+extension HandTests {
+    static var allTests: [(String, (HandTests) -> () throws -> Void)] {
+        return [
+            ("testInitializer", testInitializer),
+            ("testScore", testScore),
+            ("testScores", testScores)
+        ]
+    }
+}
+
 class HandTests: XCTestCase {
     let testData = [
         // numbers, score, scores

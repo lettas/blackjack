@@ -2,7 +2,7 @@ import XCTest
 @testable import Blackjack
 
 extension CardTests {
-    public static var allTests: [(String, (CardTests) -> () throws -> Void)] {
+    static var allTests: [(String, (CardTests) -> () throws -> Void)] {
         return [
             ("testInitializer", testInitializer),
             ("testDisplayNumber", testDisplayNumber),
