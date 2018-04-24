@@ -19,6 +19,32 @@ class DealerStrategyTests: XCTestCase {
         XCTAssertEqual(hand.score, 17)
         XCTAssertEqual(command, Command.Stand)
     }
+
+    func testSimulation() {
+        let strategy = DealerStrategy()
+        let hand = Hand(cards: [.Spades3, .Hearts2])
+        let context = PlayingContext.forDealer(hand: hand)
+
+        var command = strategy.nextCommand(context: context)
+
+        XCTAssertEqual(hand.score, 5)
+        XCTAssertEqual(command, Command.Hit)
+
+        hand.add(card: .Clubs4)
+        command = strategy.nextCommand(context: context)
+        XCTAssertEqual(hand.score, 9)
+        XCTAssertEqual(command, Command.Hit)
+
+        hand.add(card: .Diamonds7)
+        command = strategy.nextCommand(context: context)
+        XCTAssertEqual(hand.score, 16)
+        XCTAssertEqual(command, Command.Hit)
+
+        hand.add(card: .Spades9)
+        command = strategy.nextCommand(context: context)
+        XCTAssertEqual(hand.score, 25)
+        XCTAssertEqual(command, Command.Stand)
+    }
 }
 
 extension PlayingContext {
