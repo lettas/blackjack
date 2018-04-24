@@ -5,6 +5,6 @@ jobs:
       - image: swift:4.0.3
     steps:
       - checkout
-      - run: swift build
+      - run: swift build --build-tests
       - run: swift test --list-tests
       - run: swift test
