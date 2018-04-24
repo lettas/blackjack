@@ -8,12 +8,4 @@ struct PlayingContext {
         self.subjectHand = subjectHand
         self.otherHands = otherHands
     }
-
-    static func forDealer(hand: Hand) -> PlayingContext {
-        return PlayingContext(
-            knownDealerCard: Card.Spades1,
-            subjectHand: hand,
-            otherHands: [Hand]()
-        )
-    }
 }

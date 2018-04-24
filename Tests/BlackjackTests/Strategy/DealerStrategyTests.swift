@@ -20,3 +20,13 @@ class DealerStrategyTests: XCTestCase {
         XCTAssertEqual(command, Command.Stand)
     }
 }
+
+extension PlayingContext {
+    static func forDealer(hand: Hand) -> PlayingContext {
+        return PlayingContext(
+            knownDealerCard: Card.Spades1,
+            subjectHand: hand,
+            otherHands: [Hand]()
+        )
+    }
+}
