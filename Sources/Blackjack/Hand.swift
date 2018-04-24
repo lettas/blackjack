@@ -1,5 +1,5 @@
 class Hand {
-    private var cards = [Card]()
+    private var cards: [Card]
 
     var score: Int {
         // 手札が取りうるスコアの中から、21以下で一番大きい数を返す
@@ -25,7 +25,15 @@ class Hand {
         return scores
     }
 
+    init(cards: [Card]) {
+        self.cards = cards
+    }
+
+    convenience init() {
+        self.init(cards: [Card]())
+    }
+
     func add(card: Card) {
-        self.cards = self.cards + [card]
+        self.cards.append(card)
     }
 }
