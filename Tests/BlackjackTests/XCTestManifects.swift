@@ -4,7 +4,9 @@ import XCTest
 func allTests() -> [XCTestCaseEntry] {
     return [
         testCase(CardTests.allTests),
-        testCase(HandTests.allTests)
+        testCase(HandTests.allTests),
+        testCase(DealerStrategyTests.allTests),
+        testCase(TextCommandStrategyTests.allTests)
     ]
 }
 #endif

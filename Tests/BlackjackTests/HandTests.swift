@@ -12,17 +12,17 @@ extension HandTests {
 }
 
 class HandTests: XCTestCase {
-    let testData = [
-        // numbers, score, scores
-        ([3, 4], 7, [7]),
-        ([9, 13], 19, [19]),
-        ([12, 11], 20, [20]),
-        ([1, 11], 21, [11, 21]),
-        ([1, 11, 5], 16, [16, 26]),
-        ([3, 4, 6, 1], 14, [14, 24]),
-        ([1, 1], 12, [2, 12, 12, 22]),
-        ([10, 5, 10], 25, [25]),
-        ([1, 6, 9, 10], 26, [26, 36])
+    let testData: [([Card], Int, [Int])] = [
+        // cards, score, scores
+        ([.Spades3, .Spades4], 7, [7]),
+        ([.Spades9, .Spades13], 19, [19]),
+        ([.Spades12, .Spades11], 20, [20]),
+        ([.Spades1, .Spades11], 21, [11, 21]),
+        ([.Spades1, .Spades11, .Spades5], 16, [16, 26]),
+        ([.Spades3, .Spades4, .Spades6, .Spades1], 14, [14, 24]),
+        ([.Spades1, .Spades1], 12, [2, 12, 12, 22]),
+        ([.Spades10, .Spades5, .Spades10], 25, [25]),
+        ([.Spades1, .Spades6, .Spades9, .Spades10], 26, [26, 36])
     ]
 
     func testInitializer() {
@@ -32,20 +32,20 @@ class HandTests: XCTestCase {
     }
 
     func testScore() {
-        for (numbers, score, _) in testData {
+        for (cards, score, _) in testData {
             let hand = Hand()
-            for number in numbers {
-                hand.add(card: Card(suit: .Spades, number: number))
+            for card in cards {
+                hand.add(card: card)
             }
             XCTAssertEqual(hand.score, score)
         }
     }
 
     func testScores() {
-        for (numbers, _, scores) in testData {
+        for (cards, _, scores) in testData {
             let hand = Hand()
-            for number in numbers {
-                hand.add(card: Card(suit: .Spades, number: number))
+            for card in cards {
+                hand.add(card: card)
             }
             XCTAssertEqual(hand.scores.sorted(), scores.sorted())
         }

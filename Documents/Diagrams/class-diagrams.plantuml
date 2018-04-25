@@ -32,7 +32,7 @@ class Card {
 
 class PlayingContext {
     knownDealerCard: Card
-    playerHand: Hand
+    subjectHand: Hand
     otherHands: Hand[]
 }
 
