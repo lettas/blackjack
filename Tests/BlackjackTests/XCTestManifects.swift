@@ -5,7 +5,8 @@ func allTests() -> [XCTestCaseEntry] {
     return [
         testCase(CardTests.allTests),
         testCase(HandTests.allTests),
-        testCase(DealerStrategyTests.allTests)
+        testCase(DealerStrategyTests.allTests),
+        testCase(TextCommandStrategyTests.allTests)
     ]
 }
 #endif
