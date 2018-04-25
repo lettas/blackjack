@@ -3,4 +3,5 @@ enum Command {
     case Stand
     case Double
     case Split
+    case Unknown
 }
