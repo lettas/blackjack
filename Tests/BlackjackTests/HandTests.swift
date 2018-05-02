@@ -35,7 +35,7 @@ class HandTests: XCTestCase {
         for (cards, score, _) in testData {
             let hand = Hand()
             for card in cards {
-                hand.add(card: card)
+                hand.add(card)
             }
             XCTAssertEqual(hand.score, score)
         }
@@ -45,7 +45,7 @@ class HandTests: XCTestCase {
         for (cards, _, scores) in testData {
             let hand = Hand()
             for card in cards {
-                hand.add(card: card)
+                hand.add(card)
             }
             XCTAssertEqual(hand.scores.sorted(), scores.sorted())
         }

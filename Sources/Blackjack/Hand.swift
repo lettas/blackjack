@@ -33,7 +33,7 @@ class Hand {
         self.init(cards: [Card]())
     }
 
-    func add(card: Card) {
+    func add(_ card: Card) {
         self.cards.append(card)
     }
 }
