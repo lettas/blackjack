@@ -1,5 +1,5 @@
 class Hand {
-    private var cards: [Card]
+    private(set) var cards: [Card]
 
     var score: Int {
         // 手札が取りうるスコアの中から、21以下で一番大きい数を返す
