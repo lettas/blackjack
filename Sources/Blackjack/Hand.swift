@@ -1,9 +1,11 @@
 class Hand {
+    private let BlackjackScore = 21
+
     private(set) var cards: [Card]
 
     var score: Int {
         // 手札が取りうるスコアの中から、21以下で一番大きい数を返す
-        let score = scores.sorted().reversed().first(where: { $0 <= 21 })
+        let score = scores.sorted().reversed().first(where: { $0 <= BlackjackScore })
         // 21以下がなかったらなんでもいいので一番小さい数を返す
         return score ?? scores.first!
     }
@@ -23,6 +25,18 @@ class Hand {
         }
 
         return scores
+    }
+
+    var isEmpty: Bool {
+        return cards.isEmpty
+    }
+
+    var isBusted: Bool {
+        return score > BlackjackScore
+    }
+
+    var isBlackjack: Bool {
+        return score == BlackjackScore
     }
 
     var description: String {
