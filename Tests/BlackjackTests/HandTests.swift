@@ -6,7 +6,7 @@ extension HandTests {
         return [
             ("testInitializer", testInitializer),
             ("testScore", testScore),
-            ("testScores", testScores)
+            ("testDescription", testDescription),
         ]
     }
 }
@@ -49,5 +49,10 @@ class HandTests: XCTestCase {
             }
             XCTAssertEqual(hand.scores.sorted(), scores.sorted())
         }
+    }
+
+    func testDescription() {
+        let hand = Hand(cards: [.Diamonds1, .Spades13, .Clubs4])
+        XCTAssertEqual(hand.description, "\(Card.Diamonds1.description) \(Card.Spades13.description) \(Card.Clubs4.description)")
     }
 }

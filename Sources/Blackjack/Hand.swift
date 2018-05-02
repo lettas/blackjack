@@ -25,6 +25,10 @@ class Hand {
         return scores
     }
 
+    var description: String {
+        return cards.map { $0.description }.joined(separator: " ")
+    }
+
     init(cards: [Card]) {
         self.cards = cards
     }
