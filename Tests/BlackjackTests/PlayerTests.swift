@@ -1,6 +1,17 @@
 import XCTest
 @testable import Blackjack
 
+extension PlayerTests {
+    static var allTests: [(String, (PlayerTests) -> () throws -> Void)] {
+        return [
+            ("testInitializer", testInitializer),
+            ("testAccept", testAccept),
+            ("testAcceptToSecondHand", testAcceptToSecondHand),
+            ("testClearHands", testClearHands),
+        ]
+    }
+}
+
 class MockStrategy: Strategy {
     func nextCommand(context: PlayingContext) -> Command {
         return Command.Stand
@@ -8,7 +19,7 @@ class MockStrategy: Strategy {
 }
 
 class PlayerTests: XCTestCase {
-    func testInitialize() {
+    func testInitializer() {
         let player = Player(name: "John", strategy: MockStrategy())
         XCTAssertEqual(player.name, "John")
         XCTAssertNotNil(player.strategy)
