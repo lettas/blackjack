@@ -40,17 +40,17 @@ class DealerStrategyTests: XCTestCase {
         XCTAssertEqual(hand.score, 5)
         XCTAssertEqual(command, Command.Hit)
 
-        hand.add(card: .Clubs4)
+        hand.add(.Clubs4)
         command = strategy.nextCommand(context: context)
         XCTAssertEqual(hand.score, 9)
         XCTAssertEqual(command, Command.Hit)
 
-        hand.add(card: .Diamonds7)
+        hand.add(.Diamonds7)
         command = strategy.nextCommand(context: context)
         XCTAssertEqual(hand.score, 16)
         XCTAssertEqual(command, Command.Hit)
 
-        hand.add(card: .Spades9)
+        hand.add(.Spades9)
         command = strategy.nextCommand(context: context)
         XCTAssertEqual(hand.score, 25)
         XCTAssertEqual(command, Command.Stand)

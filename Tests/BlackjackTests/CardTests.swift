@@ -24,9 +24,9 @@ class CardTests: XCTestCase {
     }
 
     func testEachCards() {
-        let test = { (card: Card, expectedSuit: Card.Suit, expectedDisplayNumber: String) -> Void in
+        let test = { (card: Card, expectedSuit: Card.Suit, expectedRank: String) -> Void in
             XCTAssertEqual(card.suit, expectedSuit)
-            XCTAssertEqual(card.displayNumber, expectedDisplayNumber)
+            XCTAssertEqual(card.rank, expectedRank)
         }
 
         test(.Spades1, .Spades, "A")

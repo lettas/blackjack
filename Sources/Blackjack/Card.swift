@@ -9,7 +9,7 @@ struct Card {
     let suit: Suit
     let number: Int
 
-    var displayNumber: String {
+    var rank: String {
         switch number {
             case 1: return "A"
             case 11: return "J"
