@@ -1,8 +1,8 @@
 class Player {
     let name: String
     let strategy: Strategy
-    private var hand: Hand
-    private var secondHand: Hand
+    private(set) var hand: Hand
+    private(set) var secondHand: Hand
 
     var description: String {
         if secondHand.isEmpty {
